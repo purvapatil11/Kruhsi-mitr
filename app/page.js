@@ -5,12 +5,12 @@ export default function Home() {
     <main>
       {/* NAVBAR */}
       <nav className="bg-green-800 text-white px-6 py-4">
-  <div className="max-w-7xl mx-auto flex items-center justify-between">
-    
-    {/* Logo */}
-    <div className="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
-      <span className="uppercase">KissanMitr</span>
-    </div>
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+
+          {/* Logo */}
+          <div className="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
+            <span className="uppercase">KissanMitr</span>
+          </div>
 
           {/* Menu */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -20,15 +20,15 @@ export default function Home() {
               About Us
             </Link>
 
-            {/* 🔽 SERVICES DROPDOWN */}
+            {/* SERVICES DROPDOWN */}
             <div className="relative group">
               <span className="hover:text-green-200">Services</span>
 
               {/* Dropdown */}
               <div
                 className="absolute left-0 mt-3 w-64 bg-white text-gray-800 rounded-2xl shadow-xl 
-    opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-    transition-all duration-300 z-50 overflow-hidden"
+                opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                transition-all duration-300 z-50 overflow-hidden"
               >
                 <Link
                   href="/farmer"
@@ -46,32 +46,12 @@ export default function Home() {
               </div>
             </div>
 
-<<<<<<< HEAD
-      <Link href="/msme" className="flex items-center gap-3 px-5 py-3 hover:bg-blue-50 transition">
-        🏪 <span>MSME Services</span>
-      </Link>
+            <span className="hover:underline cursor-pointer">About KissanMitr</span>
 
-    </div>
-  </div>
-
-  <span className="hover:underline cursor-pointer">About KissanMitr</span>
-
-  <span className="hover:underline cursor-pointer">Become a User</span>
-
-</div>
-
-    {/* Button */}
-    <button className="border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-green-800 transition-all">
-      Sign Up
-    </button>
-  </div>
-</nav>
-=======
             <Link href="/auth" className="hover:underline cursor-pointer">
               Become a User
             </Link>
           </div>
->>>>>>> dae6c805c010fd108c7717c2ffc6efd9d5509ec0
 
           {/* Button */}
           <button className="border border-white px-4 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-green-800 transition-all">
@@ -82,18 +62,7 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section
-<<<<<<< HEAD
-  className="h-[710px] flex items-center relative"
-  style={{
-    backgroundImage: "url('/hero.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
-  {/* Dark overlay */}
-  <div className="absolute inset-0 bg-black/40"></div>
-=======
-        className="h-[500px] flex items-center relative"
+        className="h-[710px] flex items-center relative"
         style={{
           backgroundImage: "url('/hero.jpg')",
           backgroundSize: "cover",
@@ -102,21 +71,20 @@ export default function Home() {
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
->>>>>>> dae6c805c010fd108c7717c2ffc6efd9d5509ec0
 
         {/* Content */}
         <div className="relative px-12">
           <h1
             className="text-white text-5xl font-bold whitespace-nowrap 
-      transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
+            transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
             style={{ fontFamily: "Times New Roman, serif" }}
           >
-            Don’t Guess the Price. Know It.
+            Don't Guess the Price. Know It.
           </h1>
 
           <p
             className="text-white text-5xl font-bold mt-3 whitespace-nowrap 
-      transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
+            transition-all duration-300 ease-in-out hover:scale-105 cursor-pointer"
             style={{ fontFamily: "Times New Roman, serif" }}
           >
             Live mandi prices across Maharashtra.
@@ -139,50 +107,16 @@ export default function Home() {
           {/* Text Content */}
           <div className="w-full md:w-2/3">
             <h2 className="text-3xl font-semibold text-gray-900 italic mb-5 leading-snug">
-              “Every farmer deserves not just a price, but the right price.”
+              "Every farmer deserves not just a price, but the right price."
             </h2>
 
             <p className="text-gray-800 italic leading-relaxed mb-6 text-lg">
               For generations, farmers have relied on guesswork, middlemen, and
-              uncertainty. WiseKisan changes that. We bring transparency, data,
+              uncertainty. KissanMitr changes that. We bring transparency, data,
               and confidence to every selling decision — so you know exactly
               where and when to sell your crop for the best value.
             </p>
 
-<<<<<<< HEAD
-    {/* Text Content */}
-    <div className="w-full md:w-2/3">
-
-      <h2 className="text-3xl font-semibold text-gray-900 italic mb-5 leading-snug">
-        “Every farmer deserves not just a price, but the right price.”
-      </h2>
-
-      <p className="text-gray-800 italic leading-relaxed mb-6 text-lg">
-        For generations, farmers have relied on guesswork, middlemen, and uncertainty.
-        KissanMitr changes that. We bring transparency, data, and confidence to every
-        selling decision — so you know exactly where and when to sell your crop for the
-        best value.
-      </p>
-
-      {/* Features */}
-      <ul className="space-y-3 text-base text-gray-900">
-        <li>✔ Real-time mandi prices across Maharashtra</li>
-        <li>✔ Find the best mandi with highest returns</li>
-        <li>✔ Track price trends before selling</li>
-        <li>✔ Get WhatsApp alerts when prices rise</li>
-      </ul>
-
-    </div>
-
-  </div>
-</section>
-{/* FOOTER NOTE */}
-<div className="py-10 text-center">
-  <p className="text-gray-500 text-sm italic tracking-wide">
-    Made for farmers
-  </p>
-</div>
-=======
             {/* Features */}
             <ul className="space-y-3 text-base text-gray-900">
               <li>✔ Real-time mandi prices across Maharashtra</li>
@@ -193,13 +127,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* FOOTER NOTE */}
       <div className="py-10 text-center">
         <p className="text-gray-500 text-sm italic tracking-wide">
-          Made with purpose for Hackathon 🚀
+          Made for farmers
         </p>
       </div>
->>>>>>> dae6c805c010fd108c7717c2ffc6efd9d5509ec0
     </main>
   );
 }
