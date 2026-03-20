@@ -10,8 +10,7 @@ export default function Home() {
     
     {/* Logo */}
     <div className="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
-      <span className="text-4xl">🥕</span>
-      <span className="uppercase">MANDIWISE</span>
+      <span className="uppercase">KissanMitr</span>
     </div>
 
     {/* Menu */}
@@ -41,7 +40,7 @@ export default function Home() {
     </div>
   </div>
 
-  <span className="hover:underline cursor-pointer">About MandiWise</span>
+  <span className="hover:underline cursor-pointer">About KissanMitr</span>
 
   <span className="hover:underline cursor-pointer">Become a User</span>
 
@@ -57,7 +56,7 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section
-  className="h-[500px] flex items-center relative"
+  className="h-[710px] flex items-center relative"
   style={{
     backgroundImage: "url('/hero.jpg')",
     backgroundSize: "cover",
@@ -112,7 +111,7 @@ export default function Home() {
 
       <p className="text-gray-800 italic leading-relaxed mb-6 text-lg">
         For generations, farmers have relied on guesswork, middlemen, and uncertainty.
-        MandiWise changes that. We bring transparency, data, and confidence to every
+        KissanMitr changes that. We bring transparency, data, and confidence to every
         selling decision — so you know exactly where and when to sell your crop for the
         best value.
       </p>
@@ -132,7 +131,7 @@ export default function Home() {
 {/* FOOTER NOTE */}
 <div className="py-10 text-center">
   <p className="text-gray-500 text-sm italic tracking-wide">
-    Made with purpose for Hackathon 🚀
+    Made for farmers
   </p>
 </div>
     </main>
