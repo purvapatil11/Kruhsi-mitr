@@ -25,7 +25,7 @@ export default function AuthPage() {
         {/* Header */}
         <div className="text-center mb-6">
           <div className="text-4xl">🌾</div>
-          <h1 className="text-2xl font-bold mt-2">Join KisanMitr</h1>
+          <h1 className="text-2xl font-bold mt-2">Join KissanMitr</h1>
           <p className="text-sm text-gray-500">
             Built for farmers of Maharashtra
           </p>

@@ -9,7 +9,7 @@ export default function Home() {
           {/* Logo */}
           <div className="flex items-center gap-2 text-2xl font-extrabold tracking-wide">
             <span className="text-4xl">🥕</span>
-            <span className="uppercase">KISANMITR</span>
+            <span className="uppercase">KISSANMITR</span>
           </div>
 
           {/* Menu */}
@@ -110,7 +110,7 @@ export default function Home() {
 
             <p className="text-gray-800 italic leading-relaxed mb-6 text-lg">
               For generations, farmers have relied on guesswork, middlemen, and
-              uncertainty. KisanMitr changes that. We bring transparency, data,
+              uncertainty. KissanMitr changes that. We bring transparency, data,
               and confidence to every selling decision — so you know exactly
               where and when to sell your crop for the best value.
             </p>
