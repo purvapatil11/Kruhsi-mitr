@@ -10,8 +10,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
 
           <div className="flex items-center gap-2 text-2xl font-extrabold">
-            <span className="text-4xl">🥕</span>
-            <span className="uppercase">WISEKISAN</span>
+            <span className="uppercase">KISSANMITR</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -34,7 +33,7 @@ export default function AboutPage() {
             </h1>
 
             <p className="text-lg text-gray-600 leading-relaxed">
-              WiseKisan is a smart platform designed for farmers and small businesses
+              KissanMitr is a smart platform designed for farmers and small businesses
               across Maharashtra — helping them make better selling and financial decisions
               using real-time data and simple tools.
             </p>
@@ -72,7 +71,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
 
           <h2 className="text-3xl font-bold mb-10">
-            What WiseKisan offers
+            What KissanMitr offers
           </h2>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -116,7 +115,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto">
 
           <h2 className="text-3xl font-bold mb-10">
-            Why WiseKisan matters
+            Why KissanMitr matters
           </h2>
 
           <div className="grid md:grid-cols-4 gap-6">
@@ -148,7 +147,7 @@ export default function AboutPage() {
           </h2>
 
           <p className="text-gray-600 leading-relaxed">
-            WiseKisan was built during a hackathon with a simple vision —
+            KissanMitr was built during a hackathon with a simple vision —
             to solve real-world problems faced by farmers and small businesses.
             By combining technology with real data, we aim to create impact
             where it truly matters.

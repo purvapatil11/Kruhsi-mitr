@@ -16,6 +16,8 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
             <span className="hover:underline cursor-pointer">Home</span>
 
+            
+
             <Link href="/about" className="hover:underline cursor-pointer">
               About Us
             </Link>
