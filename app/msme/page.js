@@ -6,10 +6,18 @@ const STEPS = ['Business 🌱', 'Financials 💰', 'Score 🏆']
 
 export default function MSMEPage() {
   const [step, setStep] = useState(0)
+
   const [form, setForm] = useState({
-    ownerName: '', businessName: '', phone: '', city: '',
-    yearsInOperation: '', gstReturnsFiled: '', gstReturnsOnTime: '',
-    monthlyUpiVolume: '', utilityBillsOnTime: true, bankAccountAgeYears: '',
+    ownerName: '',
+    businessName: '',
+    phone: '',
+    city: '',
+    yearsOfBusiness: '',
+    turnover: '',
+    investment: '',
+    monthlyTransactions: '',
+    repaymentScore: '',
+    bankAge: ''
   })
 
   const [result, setResult] = useState(null)
@@ -19,18 +27,20 @@ export default function MSMEPage() {
 
   async function submit() {
     setLoading(true)
+
     const res = await fetch('/api/score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        ...form,
-        yearsInOperation: Number(form.yearsInOperation),
-        gstReturnsFiled: Number(form.gstReturnsFiled),
-        gstReturnsOnTime: Number(form.gstReturnsOnTime),
-        monthlyUpiVolume: Number(form.monthlyUpiVolume),
-        bankAccountAgeYears: Number(form.bankAccountAgeYears),
+        turnover: Number(form.turnover),
+        investment: Number(form.investment),
+        monthlyTransactions: Number(form.monthlyTransactions),
+        repaymentScore: Number(form.repaymentScore),
+        yearsOfBusiness: Number(form.yearsOfBusiness),
+        bankAge: Number(form.bankAge),
       }),
     })
+
     const data = await res.json()
     setResult(data)
     setStep(2)
@@ -43,9 +53,7 @@ export default function MSMEPage() {
       {/* HERO */}
       <div className="bg-gradient-to-r from-green-700 to-green-600 text-white px-6 py-10 shadow-lg">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold flex items-center gap-2">
-            🏪 MSME Growth Engine
-          </h1>
+          <h1 className="text-4xl font-bold">🏪 MSME Readiness Calculator</h1>
           <p className="text-green-100 mt-2">
             Understand your business strength before banks do.
           </p>
@@ -57,9 +65,9 @@ export default function MSMEPage() {
         {/* STEPPER */}
         <div className="flex justify-between">
           {STEPS.map((s, i) => (
-            <div key={s} className="flex flex-col items-center w-full relative">
-              <div className={`w-10 h-10 flex items-center justify-center rounded-full font-bold transition
-                ${i <= step ? 'bg-green-600 text-white scale-110' : 'bg-gray-200 text-gray-500'}`}>
+            <div key={s} className="flex flex-col items-center w-full">
+              <div className={`w-10 h-10 flex items-center justify-center rounded-full font-bold
+                ${i <= step ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-500'}`}>
                 {i < step ? '✓' : i + 1}
               </div>
               <span className={`text-xs mt-2 ${i <= step ? 'text-green-600' : 'text-gray-400'}`}>
@@ -71,27 +79,25 @@ export default function MSMEPage() {
 
         {/* STEP 1 */}
         {step === 0 && (
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-8 space-y-5">
-
-            <h2 className="text-xl font-semibold text-gray-800">🌱 Business Details</h2>
+          <div className="bg-white rounded-3xl shadow p-8 space-y-5">
+            <h2 className="text-xl font-semibold">🌱 Business Details</h2>
 
             <div className="grid md:grid-cols-2 gap-4">
-
-              <input placeholder="👤 Owner Name" className="input-big"
+              <input placeholder="Owner Name" className="input-big"
                 value={form.ownerName} onChange={e => set('ownerName', e.target.value)} />
 
-              <input placeholder="🏢 Business Name" className="input-big"
+              <input placeholder="Business Name" className="input-big"
                 value={form.businessName} onChange={e => set('businessName', e.target.value)} />
 
-              <input placeholder="📱 WhatsApp Number" className="input-big"
+              <input placeholder="Phone" className="input-big"
                 value={form.phone} onChange={e => set('phone', e.target.value)} />
 
-              <input placeholder="📍 City" className="input-big"
+              <input placeholder="City" className="input-big"
                 value={form.city} onChange={e => set('city', e.target.value)} />
 
-              <input type="number" placeholder="⏳ Years in Business" className="input-big"
-                value={form.yearsInOperation} onChange={e => set('yearsInOperation', e.target.value)} />
-
+              <input type="number" placeholder="Years of Business" className="input-big"
+                value={form.yearsOfBusiness}
+                onChange={e => set('yearsOfBusiness', e.target.value)} />
             </div>
 
             <button onClick={() => setStep(1)} className="btn-green">
@@ -102,44 +108,29 @@ export default function MSMEPage() {
 
         {/* STEP 2 */}
         {step === 1 && (
-          <div className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-8 space-y-6">
+          <div className="bg-white rounded-3xl shadow p-8 space-y-6">
+            <h2 className="text-xl font-semibold">💰 Financial Details</h2>
 
-            <h2 className="text-xl font-semibold text-gray-800">💰 Financial Signals</h2>
+            <input type="number" placeholder="Annual Turnover ₹" className="input-big"
+              value={form.turnover} onChange={e => set('turnover', e.target.value)} />
 
-            <input placeholder="📋 GST Returns Filed (12 months)" className="input-big"
-              value={form.gstReturnsFiled} onChange={e => set('gstReturnsFiled', e.target.value)} />
+            <input type="number" placeholder="Investment ₹" className="input-big"
+              value={form.investment} onChange={e => set('investment', e.target.value)} />
 
-            <input placeholder="⏱️ GST Filed On Time" className="input-big"
-              value={form.gstReturnsOnTime} onChange={e => set('gstReturnsOnTime', e.target.value)} />
+            <input type="number" placeholder="Monthly Transactions ₹" className="input-big"
+              value={form.monthlyTransactions} onChange={e => set('monthlyTransactions', e.target.value)} />
 
-            <input placeholder="💳 Monthly UPI Volume ₹" className="input-big"
-              value={form.monthlyUpiVolume} onChange={e => set('monthlyUpiVolume', e.target.value)} />
+            <select className="input-big"
+              value={form.repaymentScore}
+              onChange={e => set('repaymentScore', e.target.value)}>
+              <option value="">Repayment Behavior</option>
+              <option value="100">Always on time</option>
+              <option value="50">Sometimes late</option>
+              <option value="20">Mostly late</option>
+            </select>
 
-            <input placeholder="🏦 Bank Account Age (years)" className="input-big"
-              value={form.bankAccountAgeYears} onChange={e => set('bankAccountAgeYears', e.target.value)} />
-
-            {/* Utility toggle */}
-            <div className="flex items-center justify-between bg-green-50 p-4 rounded-xl">
-              <span className="text-sm font-medium">⚡ Bills paid on time?</span>
-              <div className="flex gap-2">
-                <button
-                  onClick={() => set('utilityBillsOnTime', true)}
-                  className={`px-4 py-1 rounded-full text-sm ${
-                    form.utilityBillsOnTime ? 'bg-green-600 text-white' : 'bg-white'
-                  }`}
-                >
-                  Yes
-                </button>
-                <button
-                  onClick={() => set('utilityBillsOnTime', false)}
-                  className={`px-4 py-1 rounded-full text-sm ${
-                    !form.utilityBillsOnTime ? 'bg-red-500 text-white' : 'bg-white'
-                  }`}
-                >
-                  No
-                </button>
-              </div>
-            </div>
+            <input type="number" placeholder="Bank Account Age (years)" className="input-big"
+              value={form.bankAge} onChange={e => set('bankAge', e.target.value)} />
 
             <div className="flex gap-3">
               <button onClick={() => setStep(0)} className="btn-outline">Back</button>
@@ -152,50 +143,14 @@ export default function MSMEPage() {
 
         {/* RESULT */}
         {step === 2 && result && (
-          <div className="space-y-6">
-
-            {/* SCORE CARD */}
-            <div className="bg-white rounded-3xl shadow-xl p-10 text-center">
-              <p className="text-gray-500">Your Business Score</p>
-              <h1 className="text-6xl font-bold text-green-600 mt-2">{result.score}</h1>
-              <p className="text-xl font-semibold mt-2">{result.label}</p>
-              <p className="text-gray-500 mt-2">{result.summary}</p>
-            </div>
-
-            {/* BREAKDOWN */}
-            <div className="bg-white rounded-2xl p-6 shadow">
-              <h3 className="font-semibold mb-4">📊 Score Breakdown</h3>
-
-              {result.breakdown?.map(b => (
-                <div key={b.factor} className="mb-4">
-                  <div className="flex justify-between text-sm">
-                    <span>{b.icon} {b.factor}</span>
-                    <span>{b.points}/{b.maxPoints}</span>
-                  </div>
-                  <div className="h-3 bg-gray-100 rounded-full">
-                    <div
-                      className="h-full bg-green-500 rounded-full transition-all"
-                      style={{ width: `${(b.points / b.maxPoints) * 100}%` }}
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* SCHEMES */}
-            <div className="space-y-3">
-              {result.eligibleSchemes?.map(s => (
-                <a key={s.name} href={s.url} target="_blank"
-                  className="block p-5 bg-white rounded-xl shadow hover:shadow-lg border hover:border-green-300 transition">
-                  <p className="font-semibold">{s.name}</p>
-                  <p className="text-sm text-gray-500">{s.desc}</p>
-                  <p className="text-green-600 font-bold mt-1">{s.amount}</p>
-                </a>
-              ))}
-            </div>
+          <div className="bg-white rounded-3xl shadow p-10 text-center">
+            <p className="text-gray-500">Your MSME Score</p>
+            <h1 className="text-6xl font-bold text-green-600">{result.score}</h1>
+            <p className="text-xl font-semibold mt-2">{result.status}</p>
+            <p className="text-gray-500 mt-2">Category: {result.category}</p>
 
             <button onClick={() => { setStep(0); setResult(null) }}
-              className="btn-outline w-full">
+              className="btn-outline mt-6">
               Start Again
             </button>
           </div>
